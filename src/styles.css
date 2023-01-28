@@ -1,0 +1,52 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+input:focus {
+  border: 3px solid rgb(144, 202, 249);
+  outline: none;
+}
+input {
+  padding: 12px 12px;
+}
+
+input:focus + label,
+.onFocus {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(30px, 1px);
+  z-index: 12;
+  background-color: white;
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    max-width 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  font-size: 12px;
+  color: rgb(144, 202, 249);
+  width: 52px;
+}
+.inputbox {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+input {
+  background-color: transparent;
+}
+
+label {
+  color: #ccc;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(30px, 17px);
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    max-width 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  z-index: -1;
+}
+
+input:not(:focus):valid + label {
+  color: #ccc;
+}
